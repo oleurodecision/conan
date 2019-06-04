@@ -556,6 +556,9 @@ def unix_path(path, path_flavor=None):
     if not path:
         return None
 
+    #if not path_flavor and platform.system() != "Windows":
+    #    return path
+
     if os.path.exists(path):
         path = get_cased_path(path)  # if the path doesn't exist (and abs) we cannot guess the casing
 
